@@ -1,0 +1,20 @@
+--To select shops where refridgerator is used as storage:
+SELECT "shop_name" FROM retail WHERE "storage" = 'Refridgerator';
+-- Shops with GST registration and source of inventory is from Surendranagar:
+SELECT * FROM retail WHERE "gst" = 'Yes' AND "source" = 'Surendranagar';
+-- Different modes of payment used by vendors :
+SELECT DISTINCT "payment_mode" FROM retail;
+-- Businessmen with other source of income: 
+SELECT "name", "business" FROM retail WHERE "other_sources_of_income" != 'No';
+-- Name and highest selling product of vendors with daily acquition:
+SELECT "name", "highest_selling_product" FROM retail WHERE "acquisition" = 'Daily';
+-- Vendors with age above 60:
+SELECT * FROM retail WHERE "age" > 60;
+--Vendors and their age who have a bank account:
+SELECT name, age FROM retail WHERE "bank_account" = 'Yes';
+--Vendors with payment mode as cash and online:
+SELECT Business, payment_mode FROM retail WHERE "payment_mode" = 'Cash and Online';
+-- Businesses with just-in-time inventory method:
+SELECT business, inventory FROM retail WHERE "inventory" = 'Just-in-time';
+--Businesses with source other than local:
+SELECT business, source FROM retail WHERE Source <> 'Local';
